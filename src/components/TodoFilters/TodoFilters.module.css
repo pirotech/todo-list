@@ -1,0 +1,26 @@
+.filters {
+  display: flex;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.filter {
+  padding: 6px 12px;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.filter:hover {
+  border-color: var(--accent);
+}
+
+/* Активное состояние берётся из aria-pressed — отдельный класс не нужен */
+.filter[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
