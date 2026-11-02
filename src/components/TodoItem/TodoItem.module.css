@@ -1,0 +1,61 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.text {
+  overflow-wrap: anywhere;
+  color: var(--text-h);
+}
+
+/* Выполненная задача: зачёркнута и приглушена (состояние берётся из чекбокса) */
+.checkbox:checked + .text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.delete {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.delete:hover,
+.delete:focus-visible {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
